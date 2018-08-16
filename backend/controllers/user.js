@@ -39,4 +39,28 @@ router.post('/signup', (req, res) => {
   }
 })
 
+router.post('/login', (req, res) => {
+  if (req.body.username && req.body.email && req.body.password) {
+    User.findOne({ username: req.body.username }).then(user => {
+      if (user) {
+        if (user.password === req.body.password) {
+          var payload = {
+            id: user.id
+          }
+          var token = jwt.encode(payload, config.jwtSecret)
+          res.json({
+            token: token
+          })
+        } else {
+          res.sendStatus(401)
+        }
+      } else {
+        res.sendStatus(401)
+      }
+    })
+  } else {
+    res.sendStatus(401)
+  }
+})
+
 module.exports = router
