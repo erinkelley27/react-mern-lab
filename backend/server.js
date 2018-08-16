@@ -7,6 +7,6 @@ const userController = require('./controllers/user.js')
 
 app.use(parser.json())
 
-app.use('/users', userController)
+app.use('/user', userController)
 
 app.listen(3001, () => console.log('Listening on port 3001 :)'))
