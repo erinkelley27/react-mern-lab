@@ -9,4 +9,24 @@ router.get('/', (req, res) => {
       res.json(postcards))
 })
 
+router.post('/', (req, res) => {
+  Postcard.create(req.body)
+    .then((postcard) => {
+      res.json(postcard)
+    })
+    .catch((err) => {
+      console.log(err)
+    })
+})
+
+router.get('/:id', (req, res) => {
+  Postcard.findById(req.params.id)
+    .then((postcard) => {
+      res.json(postcard)
+    })
+    .catch((err) => {
+      console.log(err)
+    })
+})
+
 module.exports = router
