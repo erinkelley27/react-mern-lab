@@ -5,7 +5,7 @@ const passport = require('./config/passport')()
 const app = express()
 
 const postcardController = require('./controllers/postcard.js')
-const userController = require('./controllers.user.js')
+const userController = require('./controllers/user.js')
 
 app.use(parser.json())
 app.use(passport.initialize())
