@@ -3,10 +3,10 @@ const parser = require('body-parser')
 
 const app = express()
 
-const userController = require('./controllers/user.js')
+const postcardController = require('./controllers/postcard.js')
 
 app.use(parser.json())
 
-app.use('/user', userController)
+app.use('/', postcardController)
 
 app.listen(3001, () => console.log('Listening on port 3001 :)'))
