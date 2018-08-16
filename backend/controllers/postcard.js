@@ -29,6 +29,20 @@ router.get('/:id', (req, res) => {
     })
 })
 
+// router.put('/:id', (req, res) => {
+//   let { content } = req.body
+//   Postcard.findOneAndUpdate({ _id: req.params.id })
+//     .then(postcard => {
+//       postcard.message.replace({ content })
+//       postcard.save(err => {
+//         res.json(postcard)
+//       })
+//         .catch((err) => {
+//           console.log(err)
+//         })
+//     })
+// })
+
 router.delete('/:id', (req, res) => {
   Postcard.findOneAndRemove({ _id: req.params.id })
     .then(postcard => {
