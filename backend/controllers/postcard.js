@@ -29,4 +29,11 @@ router.get('/:id', (req, res) => {
     })
 })
 
+router.delete('/:id', (req, res) => {
+  Postcard.findOneAndRemove({ _id: req.params.id })
+    .then(postcard => {
+      res.redirect('/')
+    })
+})
+
 module.exports = router
