@@ -1,11 +1,11 @@
 const mongoose = require('../models/User')
-const data = require('./data')
+const userdata = require('./userdata')
 
 const User = mongoose.model('User')
 
 User.remove({})
   .then(_ => {
-    User.collection.insert(data)
+    User.collection.insert(userdata)
       .then(users => {
         console.log(users)
         process.exit()
