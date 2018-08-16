@@ -1,0 +1,17 @@
+[
+    {
+        "to": "steph",
+        "from": "erin",
+        "message": "hello"
+    },
+    {
+        "to": "josh",
+        "from": "erin",
+        "message": "gingers are lame"
+    },
+    {
+        "to": "lawrence",
+        "from": "erin",
+        "message": "i owe you a granola bar"
+    }
+]
